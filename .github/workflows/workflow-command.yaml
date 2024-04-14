@@ -1,6 +1,9 @@
 name: Workflow Commands
 on: [push]
 
+## ACTIONS_RUNNER_DEBUG true
+## ACTIONS_STEP_DEBUG true
+
 jobs:
   testing-wf-commands:
     runs-on: ubuntu-latest
