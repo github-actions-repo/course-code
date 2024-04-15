@@ -21,7 +21,6 @@ jobs:
         run: echo 'Runs on success'
 
       - name: Always Runs
-        # if: success() || failure()
         if: always()
         run: 'Always Runs'
 
