@@ -1,0 +1,17 @@
+{
+  "name": "gh-actions-course",
+  "version": "1.0.0",
+  "description": "[![Variables & Secrets](https://github.com/github-actions-repo/course-code/actions/workflows/vars-and-secrets.yaml/badge.svg)](https://github.com/github-actions-repo/course-code/actions/workflows/vars-and-secrets.yaml)\r [![Status Check Functions](https://github.com/github-actions-repo/course-code/actions/workflows/status-check.yaml/badge.svg)](https://github.com/github-actions-repo/course-code/actions/workflows/status-check.yaml)\r [![Matrix](https://github.com/github-actions-repo/course-code/actions/workflows/matrix.yaml/badge.svg)](https://github.com/github-actions-repo/course-code/actions/workflows/matrix.yaml)\r [![Dynamic Matrix](https://github.com/github-actions-repo/course-code/actions/workflows/dynamic-matrix.yaml/badge.svg)](https://github.com/github-actions-repo/course-code/actions/workflows/dynamic-matrix.yaml)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "lodash": "^4.17.21",
+    "moment": "^2.30.1"
+  }
+}
