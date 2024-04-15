@@ -7,7 +7,7 @@ jobs:
   pr-comment:
     runs-on: ubuntu-latest
     permissions: # read-all/write-all
-      issues: read # write
+      issues: write # write/read
       # contents: none
     steps:
       - name: Comment on New PRs
