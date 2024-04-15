@@ -37,6 +37,7 @@ jobs:
       # max-parallel: 3      
     steps:
       - run: node -v
+      - run: echo '${{ toJson(matrix) }}'
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
