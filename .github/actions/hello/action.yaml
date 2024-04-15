@@ -1,5 +1,5 @@
 name: Hello World
-author: Steven Leong
+author: Steven
 description: "Greet someone and record the time"
 inputs:
   who_to_greet:
