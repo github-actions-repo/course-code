@@ -17,6 +17,8 @@ jobs:
       access-token: ${{ secrets.ACCESS_TOKEN }}
 
   calling-a-reusable-wf-in-the-same-repo:
+    # permissions:
+    #   issues: read
     uses: ./.github/workflows/reusable-workflow.yaml
     secrets: inherit
 
