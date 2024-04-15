@@ -1,6 +1,16 @@
 name: Matrix
 on: [push]
 
+#------- ORIGINAL --------#
+# {os: ubuntu-latest, node-version: 16, is-ubuntu: true, experimental: false}
+# {os: ubuntu-latest, node-version: 18, is-ubuntu: true, experimental: false}
+# {os: ubuntu-latest, node-version: 20, is-ubuntu: true, experimental: true}
+# {os: windows-latest, node-version: 16, experimental: false}
+# {os: windows-latest, node-version: 18, experimental: false}
+# {os: windows-latest, node-version: 20, experimental: false}
+# {os: macos-latest, node-version: 18}
+# {os: ubuntu-latest, node-version: 20}
+
 jobs:
   node-matrix:
     continue-on-error: false
@@ -9,6 +19,20 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         node-version: [16, 18, 20]
+        includes:
+          - os: ubuntu-latest
+            is-ubuntu: true
+          - os: macos-latest
+            node-version: 18
+          - experimental: false
+          - os: ubuntu-latest
+            node-version: 20
+            experimental: true
+          - os: ubuntu-latest
+            node-version: 21
+        exclude:
+          - os: ubuntu-latest
+            node-version: 16
       fail-fast: false
       # max-parallel: 3      
     steps:
