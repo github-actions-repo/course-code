@@ -1,0 +1,24 @@
+name: Harden runner
+on:
+  workflow_dispatch:
+
+jobs:
+  demo:
+    runs-on: ${{ vars.JOBS_RUNNER }}
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+      - run: terraform version
+
+      - name: Harden Runner Block Policy
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: block
+          allowed-enpoints: >
+            api.nuget.org:443
+            github.com:443

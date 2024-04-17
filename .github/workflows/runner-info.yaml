@@ -5,8 +5,15 @@ jobs:
   info:
     runs-on: ${{ vars.JOBS_RUNNER }}
     steps:
+      - name: Get access token
+        id: get_workflow_token
+        uses: peter-murray/workflow-application-token-action@v3
+        with:
+          application_id: ${{ secrets.APPLICATION_ID }}
+          application_private_key: ${{ secrets.APPLICATION_PRIVATE_KEY }}
+
       - name: Runner info
-        uses: devops-actions/load-runner-info@v1.0.6
+        uses: devops-actions/load-runner-info@v1
         id: load-runner-info-org
         with:
           accessToken: ${{ secrets.GITHUB_TOKEN }}
