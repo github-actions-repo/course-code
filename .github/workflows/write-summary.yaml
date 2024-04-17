@@ -3,14 +3,19 @@ on: [push]
 
 jobs:
   summary:
-    - name: Write Summary from Action
-      uses: actions/github-script@v7
-      with:
-        script: |
-          await core.summary.addHeading('Test Results')
-          .addTable([
-            [{data: 'File', header: true}, {data: 'Result', header: true}],
-            ['foo.js', 'Pass ✅'],
-            ['bar.js', 'Fail ❌'],
-            ['test.js', 'Pass ✅']
-          ]).addLink('View staging deployment!', 'https://github.com').write()
+    runs-on: ${{ vars.JOBS_RUNNER }}
+    steps:
+      - name: Write Summary from Action
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await core.summary
+            .addHeading('Test Results')
+            .addTable([
+              [{data: 'File', header: true}, {data: 'Result', header: true}],
+              ['foo.js', 'Pass ✅'],
+              ['bar.js', 'Fail ❌'],
+              ['test.js', 'Pass ✅']
+            ])
+            .addLink('View staging deployment!', 'https://github.com')
+            .write()
