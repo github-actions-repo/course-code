@@ -1,0 +1,14 @@
+name: Workflow permission
+on: [pull_request_target]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  triage:
+    runs-on: ${{ vars.JOBS_RUNNER }}
+    steps:
+      - uses: actions/labeler@v5
+      - uses: actions/checkout@v4
+      - uses: devops-actions/actionlint@v0.1.2
