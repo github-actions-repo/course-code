@@ -3,7 +3,7 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ${{ vars.JOBS_RUNNER }}
+    runs-on: ${{ vars.JOBS_RUNNER }} // [ubuntu-latest, windows-latest, macos-latest, self-hosted]
     steps:
       - run: echo "Build stage"
 
