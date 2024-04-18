@@ -1,0 +1,20 @@
+name: Nested Build Jobs
+on: [push]
+
+jobs:
+  build:
+    runs-on: ${{ vars.JOBS_RUNNER }}
+    steps:
+      - run: echo "Build stage"
+
+  test:
+    runs-on: ${{ vars.JOBS_RUNNER }}
+    needs: build
+    steps:
+        - run: echo "Testing stage"
+
+  deploy:
+    runs-on: ${{ vars.JOBS_RUNNER }}
+    needs: test
+    steps:
+        - run: echo "Deployment stage"
